@@ -1,40 +1,67 @@
 doctype html
 html
   head
-    meta(charset='utf-8')      
-    title SimpleCalc
+    meta(charset='utf-8')   
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title I'm Maculator
+    link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/superhero/bootstrap.min.css')   
     link(rel='stylesheet', href='/vendor/font-awesome/css/font-awesome.min.css')
     link(rel='stylesheet', href=isProd ? '/index.min.css' : '/index.css')
     link(rel='shortcut icon', href='/favicon.ico')
   body
-    #calculator
-      #output
-        #display 0
-      #buttons
-        .row
-          button#clear AC
-          button#sign &plusmn;
-          button#percent &#37;
-          button.operator &#247;
-        .row
-          button.number 7
-          button.number 8
-          button.number 9
-          button.operator &times;
-        .row
-          button.number 4
-          button.number 5
-          button.number 6
-          button.operator &#8211;
-        .row
-          button.number 1
-          button.number 2
-          button.number 3
-          button.operator +
-        .row
-          button.number#zero 0
-          button#decimal .
-          button#equal =
+    .container-fluid
+      .row
+        .col-xs-8.col-xs-offset-2.col-lg-4.col-lg-offset-4.col-md-4.col-md-offset-4
+          .row
+            .col-xs-12
+              #calculator
+                #output
+                  #display 0
+          .row
+            .col-xs-3
+              #clear AC
+            .col-xs-3
+              #sign &plusmn;
+            .col-xs-3
+              #percent &#37;
+            .col-xs-3
+              div.operator &#247;
+          .row
+            .col-xs-3
+              div.number 7
+            .col-xs-3
+              div.number 8
+            .col-xs-3
+              div.number 9
+            .col-xs-3
+              div.operator &times;
+          .row
+            .col-xs-3
+              div.number 4
+            .col-xs-3
+              div.number 5
+            .col-xs-3
+              div.number 6
+            .col-xs-3
+              div.operator &#8211;
+          .row
+            .col-xs-3
+              div.number 1
+            .col-xs-3
+              div.number 2
+            .col-xs-3
+              div.number 3
+            .col-xs-3
+              div.operator +
+          .row
+            .col-xs-6
+              div.number#zero 0
+            .col-xs-3
+              div#decimal .
+            .col-xs-3
+              div#equal = 
+        .col-xs-2.col-lg-4.col-md-4
 
     script(src='/vendor/jquery/dist/jquery.min.js')
     script(src=isProd ? '/index.min.js' : '/index.js')
