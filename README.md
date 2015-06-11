@@ -1,3 +1,3 @@
-# My Web Calculator
+# I'm Maculator
 
-This is my jQuery project after learning about jQuery for one day.
+This is mostly a Bootstrap/jQuery project.  I completed this after learning about jQuery for one day.
