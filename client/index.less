@@ -33,13 +33,14 @@ body{
 }
 
 .number {
-  // width: 58px;
+  // width: 3.1em;
   height: 10vh;
   font-weight: lighter;
   background-color: #DCDCDC;
   color: rgba(84, 103, 112, 0.83);
   text-align: center;
   padding-top: .65em;
+  margin: 0 0 0 0;
 }
 
 #decimal{
@@ -56,6 +57,7 @@ body{
 }
 
 .operator {
+  // width: 3.1em;
   height: 10vh;
   background-color: #F6872C;
   color: #ffffff;
@@ -76,6 +78,11 @@ body{
 #equal:hover{
   cursor: pointer;
   background-color: rgba(249, 126, 44, 0.75);
+}
+
+.no-gutter [class*="col-"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
 body { border-bottom: 0;}
