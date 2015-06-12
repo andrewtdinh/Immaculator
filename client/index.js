@@ -25,7 +25,8 @@ function clickNumber(){
 
 function clickDecimal(){
   var display = $('#display').text();
-  var output = display.indexOf('.') !== -1 ? display : display += '.';
+  // var output = display.indexOf('.') !== -1 ? display : display += '.';
+  var output = display.indexOf('.') !== -1 ? display : (display.length < 18 ? (display += '.') : display);
   adjustFont(output);
   $('#display').text(output);
 }
