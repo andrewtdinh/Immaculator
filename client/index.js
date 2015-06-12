@@ -4,6 +4,7 @@ $(document).ready(init);
 
 var memory = 0;
 var operation = '';
+var prevResult = false;
 
 function init(){
   $('.number').click(clickNumber);
@@ -18,14 +19,18 @@ function init(){
 function clickNumber(){
   var num = $(this).text();
   var display = $('#display').text();
-  var output = (display === '0') ? num : (display.length < 18 ? (display + num) : display);
+  if(prevResult){
+    console.log('Previous Result? ', prevResult);
+    var output = (display === '0') ? num : display;
+  }else{
+    var output = (display === '0') ? num : (display.length < 18 ? (display + num) : display);
+  }
   adjustFont(output);
   $('#display').text(output);
 }
 
 function clickDecimal(){
   var display = $('#display').text();
-  // var output = display.indexOf('.') !== -1 ? display : display += '.';
   var output = display.indexOf('.') !== -1 ? display : (display.length < 18 ? (display += '.') : display);
   adjustFont(output);
   $('#display').text(output);
@@ -33,6 +38,8 @@ function clickDecimal(){
 
 function clear(){
   $('#display').text('0');
+  operation = '';
+  prevResult = false;
   adjustFont(0);
 }
 
@@ -40,6 +47,7 @@ function clickOperator(){
   memory = parseFloat($('#display').text());
   operation = $(this).text();
   $('#display').text('0');
+  prevResult = false;
   adjustFont(0);
 }
 
@@ -54,7 +62,7 @@ function calculate(){
     case '÷': memory /= parseFloat(display); $('#display').text(memory); break;
   }
   adjustFont(memory);
-  operation = '';
+  prevResult = true;
 }
 
 function reverse(){
