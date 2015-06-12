@@ -31,7 +31,11 @@ function clickNumber(){
 
 function clickDecimal(){
   var display = $('#display').text();
-  var output = display.indexOf('.') !== -1 ? display : (display.length < 18 ? (display += '.') : display);
+  if(prevResult){
+    var output = display;
+  }else{
+    var output = display.indexOf('.') !== -1 ? display : (display.length < 18 ? (display += '.') : display);
+  }
   adjustFont(output);
   $('#display').text(output);
 }
@@ -66,13 +70,16 @@ function calculate(){
 }
 
 function reverse(){
-  var display = -1 * $('#display').text();
+  var display = (display.length < 18 ? (-1 * $('#display').text()) : $('#display').text());
   adjustFont(display);
   $('#display').text(display);
 }
 
 function makePercent(){
   var display = $('#display').text() * 1 / 100;
+  if(display.length >= 18){
+    display = display * 100;
+  }
   adjustFont(display);
   $('#display').text(display);
 }
