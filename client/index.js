@@ -94,9 +94,9 @@ function adjustFont(stringOrNum){
   if (typeof stringOrNum === 'number') {display = stringOrNum.toString();}
   else {display = stringOrNum;}
   if (display.length < 10) {
-    if (currentFontSize !== '4.8rem') {
-      $('#display').css('font-size', '4.8rem');
-      $('#display').css('padding-top', '3vh');
+    if (currentFontSize !== '4.7rem') {
+      $('#display').css('font-size', '4.7rem');
+      $('#display').css('padding-top', '3.2vh');
     }
   }
   else if (display.length < 15) {
@@ -106,8 +106,8 @@ function adjustFont(stringOrNum){
     }
   }
   else {
-    if (currentFontSize !== '2.4rem'){
-      $('#display').css('font-size', '2.4rem');
+    if (currentFontSize !== '2.3rem'){
+      $('#display').css('font-size', '2.3rem');
       $('#display').css('padding-top', '6.8vh');
     }
   }
