@@ -70,15 +70,18 @@ function calculate(){
 }
 
 function reverse(){
-  var display = (display.length < 18 ? (-1 * $('#display').text()) : $('#display').text());
+  var display = $('#display').text();
+  if(display.toString().length > 18){
+    display = -1 * display;
+  }
   adjustFont(display);
   $('#display').text(display);
 }
 
 function makePercent(){
-  var display = $('#display').text() * 1 / 100;
-  if(display.length >= 18){
-    display = display * 100;
+  var display = $('#display').text();
+  if(display.length <= 18){
+    display = display / 100;
   }
   adjustFont(display);
   $('#display').text(display);
