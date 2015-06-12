@@ -71,7 +71,7 @@ function calculate(){
 
 function reverse(){
   var display = $('#display').text();
-  if(display.toString().length > 18){
+  if(display * 1 < 0 || display.length < 18){
     display = -1 * display;
   }
   adjustFont(display);
