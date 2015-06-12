@@ -18,6 +18,7 @@ function init(){
 function clickNumber(){
   var num = $(this).text();
   var display = $('#display').text();
+  console.log('current display: ', display);
   var output = (display === '0') ? num : display + num;
   adjustFont(output);
   $('#display').text(output);
@@ -72,11 +73,12 @@ function makePercent(){
 function adjustFont(stringOrNum){
   var display;
   var currentFontSize = $('#display').css('font-size');
+  console.log('currentFontSize: ', currentFontSize);
   if (typeof stringOrNum === 'number') {display = stringOrNum.toString();}
   else {display = stringOrNum;}
   if (display.length < 9) {
-    if (currentFontSize !== '50px') {
-      $('#display').css('font-size', '50px');
+    if (currentFontSize !== '60px') {
+      $('#display').css('font-size', '60px');
       $('#display').css('height', '40px');
       $('#display').css('top', '30px');
     }
